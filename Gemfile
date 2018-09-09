@@ -29,6 +29,7 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'devise'
 
 
 group :development, :test do
