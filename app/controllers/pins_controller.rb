@@ -1,51 +1,57 @@
 class PinsController < ApplicationController
-  def index
-    @pins = Pin.all.order('created_at DESC')
-  end
+	before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+	before_action :authenticate_user!, except: [:index, :show]
 
-  def new
-    @pin = current_user.pins.build
-  end
+	def index
+		@pins = Pin.all.order("created_at DESC")
+	end
 
-  def show
-    @pin = Pin.find(params[:id])
-  end
+	def show
+	end
 
-  def create
-    @pin = current_user.pins.build(pin_params)
+	def new
+		@pin = current_user.pins.build
+	end
 
-    if @pin.save
-      redirect_to @pin, notice: "Successfully created your Pin!"
-    else
-      render 'new'
-    end
-  end
+	def create
+		@pin = current_user.pins.build(pin_params)
 
-  def edit
-    @pin = Pin.find(params[:id])
-  end
+		if @pin.save
+			redirect_to @pin, notice: "Pin was successfully created"
+		else
+			render 'new'
+		end
+	end
 
-  def update
-    @pin = Pin.find(params[:id])
+	def edit
+	end
 
-    if @pin.update(pin_params)
-      redirect_to @pin, notice: "Pin was Successfully updated!"
-    else
-      render 'edit'
-    end
-  end
+	def update
+		if @pin.update(pin_params)
+			redirect_to @pin, notice: "Pin was successfully updated"
+		else
+			render 'edit'
+		end
+	end
 
-  def destroy
-    @pin = Pin.find(params[:id])
-    @pin.destroy
+	def destroy
+		@pin.destroy
+		redirect_to root_path
+	end
 
-    redirect_to pins_path, notice: "Pin was Successfully Deleted!"
-  end
+	def upvote
+		@pin.upvote_by current_user
+		redirect_to @pin
+	end
 
-  private
+	private
 
-  def pin_params
-    params.require(:pin).permit(:title, :description, :image)
-  end
+	def pin_params
+		params.require(:pin).permit(:title, :description, :image)
+	end
+
+	def find_pin
+		@pin = Pin.find(params[:id])
+	end
 
 end
