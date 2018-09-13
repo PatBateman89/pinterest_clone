@@ -9,6 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -29,12 +30,11 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'devise'
-gem "paperclip", "~> 6.0.0"
+gem 'paperclip'
 gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem "bulma-rails", "~> 0.7.1"
-gem 'aws-sdk', '< 2.0'
-gem 'figaro', '1.0'
+gem 'aws-sdk', '~> 2.3'
 
 
 
@@ -44,6 +44,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -56,7 +57,7 @@ group :development do
 end
 
 group :development do
-  gem 'sqlite3'
+
 end
 
 group :production do
