@@ -33,6 +33,8 @@ gem "paperclip", "~> 6.0.0"
 gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem "bulma-rails", "~> 0.7.1"
+gem "figaro"
+gem 'aws-sdk', '< 2.0'
 
 
 

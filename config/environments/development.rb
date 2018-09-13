@@ -54,4 +54,16 @@ Rails.application.configure do
 
   # Needed for Devise Gem
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # config/environments/development.rb
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('pinterest-project-eric'),
+    access_key_id: ENV.fetch('AKIAJ4LC5KHKEZRFZRNQ'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('us-west-1'),
+  }
+}
+
 end
