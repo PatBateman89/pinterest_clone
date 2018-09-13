@@ -59,10 +59,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('pinterest-project-eric'),
-    access_key_id: ENV.fetch('AKIAJ4LC5KHKEZRFZRNQ'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-west-1'),
+    bucket: ENV['pinterest-project-eric'],
+    access_key_id: ENV['AKIAJ4LC5KHKEZRFZRNQ'],
+    secret_access_key: ENV['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'],
+    s3_region: ENV['us-west-1'],
   }
 }
 
