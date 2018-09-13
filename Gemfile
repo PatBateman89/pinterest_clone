@@ -34,8 +34,6 @@ gem 'paperclip'
 gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem "bulma-rails", "~> 0.7.1"
-gem 'aws-sdk', '~> 2.3'
-gem 'aws-sdk-v1'
 
 
 
@@ -64,6 +62,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'aws-sdk', '~> 2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
