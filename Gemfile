@@ -30,7 +30,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'devise'
-gem 'paperclip'
+gem 'paperclip', '~> 4.2.0'
+gem 'aws-sdk', '~> 1.59.1'
 gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem "bulma-rails", "~> 0.7.1"
@@ -62,7 +63,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'aws-sdk', '~> 2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
