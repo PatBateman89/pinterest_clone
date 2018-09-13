@@ -34,7 +34,8 @@ gem 'paperclip'
 gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem "bulma-rails", "~> 0.7.1"
-gem 'aws-sdk-s3', '~> 1'
+gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-v1'
 
 
 
